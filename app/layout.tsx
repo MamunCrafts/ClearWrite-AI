@@ -1,8 +1,9 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import { Suspense } from 'react'
 import PostHogClient from '@/components/posthog-client'
 
 export const metadata: Metadata = {
@@ -11,9 +12,6 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   authors: [{ name: 'Md. Al Mamun Mim', url: 'https://github.com/MamunCrafts' }],
   keywords: ['MamunCrafts', 'AI Projects', 'Next.js', 'Fullstack Development', 'Md. Al Mamun Mim'],
-  themeColor: '#ffffff',
-  colorScheme: 'light',
-  viewport: 'width=device-width, initial-scale=1.0',
   openGraph: {
     title: 'ClearWriteAI - AI-Powered Writing Assistant',
     description: 'Blending code, design, and AI to create innovative projects.',
@@ -39,6 +37,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+  colorScheme: 'light',
+  width: 'device-width',
+  initialScale: 1,
+};
+
 
 export default function RootLayout({
   children,
@@ -48,7 +53,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <PostHogClient />
+        <Suspense fallback={null}>
+          <PostHogClient />
+        </Suspense>
         {children}
         <Analytics />
       </body>
