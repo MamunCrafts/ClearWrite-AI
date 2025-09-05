@@ -120,7 +120,7 @@ export default function NLPApp() {
           <div className="flex items-center justify-between">
             {/* Logo and Brand */}
             <div className="flex items-center space-x-3">
-              <Image src="/clearwrite-logo.png" alt="ClearWrite AI Logo" width={40} height={40} className="h-10 w-10" />
+              <Image src="/clearwrite-logov1.png" alt="ClearWrite AI Logo" width={200} height={40} className="shrink-0 h-10 w-24" />
               <h1 className="text-xl font-bold text-[#1E3A8A]">ClearWrite AI</h1>
             </div>
 
