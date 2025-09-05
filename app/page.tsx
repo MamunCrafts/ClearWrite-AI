@@ -146,92 +146,8 @@ export default function NLPApp() {
       </header>
 
       <div className="container mx-auto px-4 py-8 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Input Section */}
-          <Card className="border-gray-200">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-[#1E3A8A]">
-                <FileText className="h-5 w-5" />
-                Text Input
-              </CardTitle>
-              <CardDescription>
-                Enter or paste your text below to get started with AI-powered processing.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <Textarea
-                placeholder="Enter your text here..."
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                className="min-h-[200px] resize-none border-gray-200 focus:border-[#10B981] focus:ring-[#10B981]"
-              />
 
-              {detectedLanguage && (
-                <div className="flex items-center gap-2">
-                  <Languages className="h-4 w-4 text-gray-500" />
-                  <span className="text-sm text-gray-600">
-                    Detected language:{" "}
-                    <Badge variant="outline" className="border-[#10B981] text-[#10B981]">
-                      {detectedLanguage}
-                    </Badge>
-                  </span>
-                </div>
-              )}
-
-              <div className="flex gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={clearAll}
-                  className="flex items-center gap-1 border-gray-300 text-gray-600 hover:border-[#1E3A8A] hover:text-[#1E3A8A] bg-transparent"
-                >
-                  <Trash2 className="h-3 w-3" />
-                  Clear
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Output Section */}
-          <Card className="border-gray-200">
-            <CardHeader>
-              <CardTitle className="flex items-center justify-between text-[#1E3A8A]">
-                <span className="flex items-center gap-2">
-                  <RefreshCw className="h-5 w-5" />
-                  Processed Output
-                </span>
-                {outputText && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={copyToClipboard}
-                    className="flex items-center gap-1 border-gray-300 text-gray-600 hover:border-[#10B981] hover:text-[#10B981] bg-transparent"
-                  >
-                    <Copy className="h-3 w-3" />
-                    Copy
-                  </Button>
-                )}
-              </CardTitle>
-              <CardDescription>Your processed text will appear here after selecting an action below.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="min-h-[200px] p-4 bg-gray-50 rounded-md border border-gray-200">
-                {isProcessing ? (
-                  <div className="flex items-center justify-center h-full">
-                    <Loader2 className="h-6 w-6 animate-spin text-[#10B981]" />
-                    <span className="ml-2 text-gray-600">Processing...</span>
-                  </div>
-                ) : outputText ? (
-                  <MarkdownRenderer content={outputText} />
-                ) : (
-                  <p className="text-gray-500 text-center">Select an action below to process your text</p>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <Card className="mt-12 border-gray-200">
+      <Card className="mt-12 border-gray-200">
           <CardHeader>
             <CardTitle className="text-[#1E3A8A]">AI Processing Options</CardTitle>
             <CardDescription>Choose from various NLP tasks to enhance and transform your text.</CardDescription>
@@ -409,7 +325,103 @@ export default function NLPApp() {
             </Tabs>
           </CardContent>
         </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Input Section */}
+          <Card className="border-gray-200">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-[#1E3A8A]">
+                <FileText className="h-5 w-5" />
+                Text Input
+              </CardTitle>
+              <CardDescription>
+                Enter or paste your text below to get started with AI-powered processing.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <Textarea
+                placeholder="Enter your text here..."
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+                className="min-h-[200px] resize-none border-gray-200 focus:border-[#10B981] focus:ring-[#10B981]"
+              />
+
+              {detectedLanguage && (
+                <div className="flex items-center gap-2">
+                  <Languages className="h-4 w-4 text-gray-500" />
+                  <span className="text-sm text-gray-600">
+                    Detected language:{" "}
+                    <Badge variant="outline" className="border-[#10B981] text-[#10B981]">
+                      {detectedLanguage}
+                    </Badge>
+                  </span>
+                </div>
+              )}
+
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={clearAll}
+                  className="flex items-center gap-1 border-gray-300 text-gray-600 hover:border-[#1E3A8A] hover:text-[#1E3A8A] bg-transparent"
+                >
+                  <Trash2 className="h-3 w-3" />
+                  Clear
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Output Section */}
+          <Card className="border-gray-200">
+            <CardHeader>
+              <CardTitle className="flex items-center justify-between text-[#1E3A8A]">
+                <span className="flex items-center gap-2">
+                  <RefreshCw className="h-5 w-5" />
+                  Processed Output
+                </span>
+                {outputText && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={copyToClipboard}
+                    className="flex items-center gap-1 border-gray-300 text-gray-600 hover:border-[#10B981] hover:text-[#10B981] bg-transparent"
+                  >
+                    <Copy className="h-3 w-3" />
+                    Copy
+                  </Button>
+                )}
+              </CardTitle>
+              <CardDescription>Your processed text will appear here after selecting an action below.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="min-h-[200px] p-4 bg-gray-50 rounded-md border border-gray-200">
+                {isProcessing ? (
+                  <div className="flex items-center justify-center h-full">
+                    <Loader2 className="h-6 w-6 animate-spin text-[#10B981]" />
+                    <span className="ml-2 text-gray-600">Processing...</span>
+                  </div>
+                ) : outputText ? (
+                  <MarkdownRenderer content={outputText} />
+                ) : (
+                  <p className="text-gray-500 text-center">Select an action below to process your text</p>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
       </div>
+
+      <footer className="border-t border-gray-200 bg-white">
+        <div className="container mx-auto px-4 py-6 text-center text-gray-600">
+          <p>
+            Created by {""}
+            <span className="font-semibold text-[#1E3A8A]">Md. Al Mamun Mim</span>{" "}
+            — {""}
+            <span className="text-[#10B981]">Software Developer, Talent Pro</span>
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }
