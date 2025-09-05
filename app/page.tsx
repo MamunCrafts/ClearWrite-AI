@@ -190,12 +190,10 @@ export default function NLPApp() {
                 Translate, paraphrase, summarize, and refine your text with clarity and speed.
               </p>
               <div className="mt-6 flex items-center justify-center lg:justify-start gap-3">
-                <Button className="bg-[#1E3A8A] hover:bg-[#1b3172] text-white px-6 py-6 h-11 shadow-md hover:shadow-lg transition-all" asChild>
+                <Button className="bg-gradient-to-r from-[#E0F2FE] via-[#ECFEFF] to-[#DCFCE7] dark:from-[#0b1120] text-black dark:via-[#0b1328] dark:to-[#052e2b] dark:text-white px-6 py-6 h-11 shadow-md hover:shadow-lg transition-all" asChild>
                   <a href="#workbench">Start Writing</a>
                 </Button>
-                <Button variant="outline" className="border-gray-300 text-gray-700 dark:text-gray-200 hover:border-[#10B981] hover:text-[#10B981]">
-                  Learn More
-                </Button>
+              
               </div>
             </motion.div>
 
@@ -230,7 +228,7 @@ export default function NLPApp() {
         </div>
       </section>
 
-      <div id="workbench" className="container mx-auto px-4 py-8 max-w-6xl flex flex-col">
+      <div id="workbench" className="container border-gray-200/80 dark:border-white/20 bg-gradient-to-r from-[#e1eaf0] via-[#eef8f8] to-[#DCFCE7] dark:from-[#0b1120] dark:via-[#0b1328] dark:to-[#052e2b]  mx-auto px-4 py-8 max-w-6xl flex flex-col">
 
       <Card className="mb-12 border-gray-200/70 dark:border-white/10 bg-gradient-to-r from-[#E0F2FE] via-[#ECFEFF] to-[#DCFCE7] dark:from-[#0b1120] dark:via-[#0b1328] dark:to-[#052e2b] order-2 lg:order-1">
           <CardHeader>
