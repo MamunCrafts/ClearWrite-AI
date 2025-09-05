@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Loader2, Languages, RefreshCw, FileText, Wand2, Copy, Trash2 } from "lucide-react"
+import { Loader2, Languages, RefreshCw, FileText, Wand2, Copy, Trash2, Sparkles } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
 import ThemeToggle from "@/components/theme-toggle"
@@ -171,8 +171,8 @@ export default function NLPApp() {
           <div className="absolute -bottom-16 -right-10 h-72 w-72 rounded-full bg-[#10B981]/20 blur-3xl animate-blob animation-delay-2000" />
           <div className="absolute top-1/3 right-1/3 h-72 w-72 rounded-full bg-[#4f46e5]/10 dark:bg-[#10B981]/10 blur-3xl animate-blob animation-delay-4000" />
         </div>
-        <div className="container mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="lg:w-[1140px] w-full mx-auto px-4 pt-12 pb-8 lg:pt-16 lg:pb-12">
+          <div className="grid grid-cols-1  gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ export default function NLPApp() {
             </motion.div>
 
             {/* Hero preview card */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
@@ -225,14 +225,14 @@ export default function NLPApp() {
                   <div className="h-8 w-24 rounded-full bg-[#10B981]" />
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>
 
       <div id="workbench" className="container mx-auto px-4 py-8 max-w-6xl flex flex-col">
 
-      <Card className="mb-12 border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur order-2 lg:order-1">
+      <Card className="mb-12 border-gray-200/70 dark:border-white/10 bg-gradient-to-r from-[#E0F2FE] via-[#ECFEFF] to-[#DCFCE7] dark:from-[#0b1120] dark:via-[#0b1328] dark:to-[#052e2b] order-2 lg:order-1">
           <CardHeader>
             <CardTitle className="text-[#1E3A8A] dark:text-[#10B981]">AI Processing Options</CardTitle>
             <CardDescription>Choose from various AI-powered tasks to enhance and transform your text.</CardDescription>
@@ -410,9 +410,37 @@ export default function NLPApp() {
             </Tabs>
           </CardContent>
         </Card>
+
+        {/* Gradient Highlights Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card className="mb-12 overflow-hidden border-gray-200/70 dark:border-white/10 bg-gradient-to-r from-[#E0F2FE] via-[#ECFEFF] to-[#DCFCE7] dark:from-[#0b1120] dark:via-[#0b1328] dark:to-[#052e2b]">
+            <CardHeader className="relative">
+              <CardTitle className="flex items-center gap-2 text-[#1E3A8A] dark:text-[#10B981]">
+                <Sparkles className="h-5 w-5" /> Highlights
+              </CardTitle>
+              <CardDescription className="max-w-2xl">
+                Enjoy a colorful, modern workspace. Smooth animations, helpful actions, and a clean, focused editor.
+              </CardDescription>
+              <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/40 dark:bg-white/5 blur-2xl" />
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="px-3 py-1 rounded-full text-sm font-medium bg-white/70 text-[#1E3A8A] dark:bg-white/10 dark:text-[#9ae6b4]">Fast</span>
+                <span className="px-3 py-1 rounded-full text-sm font-medium bg-white/70 text-[#1E3A8A] dark:bg-white/10 dark:text-[#9ae6b4]">Accurate</span>
+                <span className="px-3 py-1 rounded-full text-sm font-medium bg-white/70 text-[#1E3A8A] dark:bg-white/10 dark:text-[#9ae6b4]">Secure</span>
+                <span className="px-3 py-1 rounded-full text-sm font-medium bg-white/70 text-[#1E3A8A] dark:bg-white/10 dark:text-[#9ae6b4]">Multi‑language</span>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 order-1 lg:order-2">
           {/* Input Section */}
-          <Card className="border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur">
+          <Card className="border-gray-200/70 dark:border-white/10 bg-gradient-to-r from-[#E0F2FE] via-[#ECFEFF] to-[#DCFCE7] dark:from-[#0b1120] dark:via-[#0b1328] dark:to-[#052e2b]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#1E3A8A] dark:text-[#10B981]">
                 <FileText className="h-5 w-5" />
@@ -457,7 +485,7 @@ export default function NLPApp() {
           </Card>
 
           {/* Output Section */}
-          <Card className="border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur">
+          <Card className="border-gray-200/70 dark:border-white/10 bg-gradient-to-r from-[#E0F2FE] via-[#ECFEFF] to-[#DCFCE7] dark:from-[#0b1120] dark:via-[#0b1328] dark:to-[#052e2b]">
             <CardHeader>
               <CardTitle className="flex items-center justify-between text-[#1E3A8A] dark:text-[#10B981]">
                 <span className="flex items-center gap-2">
@@ -479,7 +507,7 @@ export default function NLPApp() {
               <CardDescription>Your processed text will appear here after selecting an action below.</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="min-h-[200px] p-4 bg-gray-50 rounded-md border border-gray-200">
+              <div className="min-h-[200px] p-4 border-gray-200/70 dark:border-white/10 focus:border-[#10B981] focus:ring-[#10B981] bg-white/60 dark:bg-white/5 rounded-md ">
                 <AnimatePresence mode="wait">
                   {isProcessing ? (
                     <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center justify-center h-full">

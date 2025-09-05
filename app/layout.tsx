@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Suspense } from 'react'
 import PostHogClient from '@/components/posthog-client'
+import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
   title: 'ClearWriteAI - AI-Powered Writing Assistant by MamunCrafts',
@@ -51,13 +52,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense fallback={null}>
-          <PostHogClient />
-        </Suspense>
-        {children}
-        <Analytics />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Suspense fallback={null}>
+            <PostHogClient />
+          </Suspense>
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
