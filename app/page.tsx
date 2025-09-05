@@ -529,7 +529,7 @@ export default function NLPApp() {
 
       </div>
 
-      <footer className="border-t border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur">
+      <footer className="border-t mt-12 border-gray-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur">
         <div className="container mx-auto px-4 py-6 text-center text-gray-600 dark:text-gray-300">
           <p>
             Created by {""}
