@@ -145,9 +145,9 @@ export default function NLPApp() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl flex flex-col">
 
-      <Card className="mt-12 border-gray-200">
+      <Card className="mt-12 border-gray-200 order-2 lg:order-1">
           <CardHeader>
             <CardTitle className="text-[#1E3A8A]">AI Processing Options</CardTitle>
             <CardDescription>Choose from various NLP tasks to enhance and transform your text.</CardDescription>
@@ -325,7 +325,7 @@ export default function NLPApp() {
             </Tabs>
           </CardContent>
         </Card>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 order-1 lg:order-2">
           {/* Input Section */}
           <Card className="border-gray-200">
             <CardHeader>
