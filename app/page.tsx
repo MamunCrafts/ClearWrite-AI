@@ -150,7 +150,7 @@ export default function NLPApp() {
       <Card className="mt-12 border-gray-200 order-2 lg:order-1">
           <CardHeader>
             <CardTitle className="text-[#1E3A8A]">AI Processing Options</CardTitle>
-            <CardDescription>Choose from various NLP tasks to enhance and transform your text.</CardDescription>
+            <CardDescription>Choose from various AI-powered tasks to enhance and transform your text.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
             <Tabs value={activeTab} onValueChange={setActiveTab}>
